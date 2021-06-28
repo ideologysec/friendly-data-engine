@@ -5,8 +5,10 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 dtString = datetime.now().strftime("%Y-%m-%d-%H%M")
+currentPath = os.path.abspath(os.getcwd())
+candidateFile = [f for f in os.listdir(currentPath) if f.endswith('.xml')][0]
 
-with open("labdata.xml", "r") as labfile, open('{0} labdata.csv'.format(dtString), "w") as convertedData:
+with open(candidateFile, "r") as labfile, open('{0} labdata.csv'.format(dtString), "w") as convertedData:
 
     csvwriter = csv.writer(convertedData)
     headingRow = ['Date', 'Type', 'Test', 'Units', 'Lower Limit', 'Upper Limit', 'Result', 'Flag', 'Comments', 'Status', 'Ordered By', 'Specimen Source', 'Lab Address']
