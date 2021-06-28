@@ -1,0 +1,3 @@
+## ignore the sensitive bits
+*.xml
+*.csv
