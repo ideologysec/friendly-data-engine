@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-import csv
+import csv, os
 from bs4 import BeautifulSoup
 from datetime import datetime
 
